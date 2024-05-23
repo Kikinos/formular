@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="cs">
+
+<head>
+    <title>Responzivní formuář</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="./libs/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+</head>
+
+<body>
+    <header class="bg-danger p-3 text-center">
+        <h1 class="display-3 text-light">Responzivní formulář</h1>
+    </header>
+    <main>
+        <h2 class="text-center mt-3 mb-2">Formulář studenta</h2>
+        <form action=""></form>
+        <div class="container">
+            <form>
+                <div class="mb-3 row">
+                    <label for="inputName" class="col-md-3 col-form-label">Jméno studenta</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" name="jmeno" id="jmeno" placeholder="Zadejte jméno"
+                            required />
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="datumNarozeni" class="col-md-3 col-form-label">Datum narození</label>
+                    <div class="col-md-9">
+                        <input type="date" class="form-control" name="datum" id="datum" />
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="email" class="col-md-3 col-form-label">Email</label>
+                    <div class="col-md-9">
+                        <input type="email" class="form-control" name="email" id="email"
+                            placeholder="youremail@example.com" required />
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="heslo" class="col-md-3 col-form-label">Heslo</label>
+                    <div class="col-md-9">
+                        <input type="password" class="form-control" name="heslo" id="heslo"
+                            placeholder="Zadejte heslo" required pattern="^[a-zA-Z0-9]{8}$" />
+                    </div>
+                </div>
+                        <fieldset class="mb-3 row">
+                            <legend class="col-form-legend col-4">
+                                Pohlaví
+                            </legend>
+                            <div class="col-8">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="gender" id="man" value="muz" />
+                                    <label class="form-check-label" for="man"> Muž</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="gender" id="woman" value="zena"/>
+                                    <label class="form-check-label" for="woman">
+                                        Žena
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="gender" id="nonbinary" value="nebinarni"/>
+                                    <label class="form-check-label" for="Nonbinary">
+                                        Nebinární
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12 alert alert-info collapse">
+                                Nápověda: Nebinární lidé nazapadají mezi ženy ani muže. 
+                            </div>
+                        </fieldset>
+                        <fieldset class="mb-3 row">
+                            <legend class="col-form-legend col-4">
+                                Preferované prohlížeče
+                            </legend>
+                            <div class="col-8">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="chrome" id="chrome" value="google chrome" />
+                                    <label class="form-check-label" for="chrome">Google chrome</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="firefox" id="firefox" value="firefox"/>
+                                    <label class="form-check-label" for="firefox">
+                                        Firefox
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="safari" id="safari" value="safari"/>
+                                    <label class="form-check-label" for="safari">
+                                        Safari
+                                    </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="edge" id="edge" value="edge" checked="checked"/>
+                                    <label class="form-check-label" for="edge">
+                                        MS Edge
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <div class="mb-3 row">
+                            <label for="poznamka" class="col-sm-3 col-form-label">Poznamka</label>
+                            <div class="col-sm-9">
+                                <div class="mb-3">
+                                    <textarea class="form-control" name="poznamka" id="poznamka" rows="5">Poznámka</textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="foto" class="col-md-3 col-form-label">Fotka</label>
+                            <div class="col-sm-9">
+                                <input type="file" class="form-control" name="foto" id="foto" />
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <div class="offset-sm-4 col-sm-8">
+                                <button type="submit" class="btn btn-primary">
+                                    Odeslat
+                                </button>
+                                <button type="button" class="btn btn-info" data-bs-toggle="collapse" data-bs-target=".alert">Nápovědy</button>
+                                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#myModal">
+                                    O autorovi
+                                </button>
+                            </div>
+                        </div>
+                        <!-- The Modal -->
+                        <div class="modal" id="myModal">
+                            <div class="modal-dialog">
+                            <div class="modal-content">
+                        
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                <h4 class="modal-title">O autorovi</h4>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                        
+                                <!-- Modal body -->
+                                <div class="modal-body col-sm-5">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore doloribus aut blanditiis fuga natus quos, ea pariatur beatae aliquam molestias.
+                                <img src="https://picsum.photos/200/300?grayscale" alt="" class="img-fluid">
+                                </div>
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Zavřít</button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        
+            </form>
+        </div>
+    </main>
+    <footer>
+        <!-- place footer here -->
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="./libs/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+    </script>
+
+    <script src="./libs/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
